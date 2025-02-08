@@ -6,7 +6,26 @@
     "tags": ["latex-build"],
     "shell": {
       "program": "/bin/bash"
-      //"args": [""]
     }
+  },
+  {
+    "label": "preview (evince)",
+    "command": "$HOME/.local/share/zed/extensions/work/latex/evince_synctex.py test.pdf \"zed %f:%l\"",
+    "reveal": "never"
+  },
+  {
+    "label": "forward search (evince)",
+    "command": "$HOME/.local/share/zed/extensions/work/latex/evince_synctex.py -f $ZED_ROW -t $ZED_FILE test.pdf \"zed %f:%l\"",
+    "reveal": "never"
+  },
+  {
+    "label": "forward search (zathura)",
+    "command": "zathura --synctex-forward $ZED_ROW:1:$ZED_FILE $(cat $ZED_WORKTREE_ROOT/.zed/OUTPUT_PDF)",
+    "reveal": "never"
+  },
+  {
+    "label": "preview (zathura)",
+    "command": "zathura -x \"zed %{input}:%{line}\" $(cat $ZED_WORKTREE_ROOT/.zed/OUTPUT_PDF)",
+    "reveal": "never"
   }
 ]
