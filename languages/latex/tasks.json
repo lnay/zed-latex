@@ -10,12 +10,12 @@
   },
   {
     "label": "preview (evince)",
-    "command": "$HOME/.local/share/zed/extensions/work/latex/evince_synctex.py test.pdf \"zed %f:%l\"",
+    "command": "python $HOME/.local/share/zed/extensions/work/latex/evince_synctex.py $(cat $ZED_WORKTREE_ROOT/.zed/OUTPUT_PDF) \"zed %f:%l\"",
     "reveal": "never"
   },
   {
     "label": "forward search (evince)",
-    "command": "$HOME/.local/share/zed/extensions/work/latex/evince_synctex.py -f $ZED_ROW -t $ZED_FILE test.pdf \"zed %f:%l\"",
+    "command": "python $HOME/.local/share/zed/extensions/work/latex/evince_synctex.py -f $ZED_ROW -t $ZED_FILE $(cat $ZED_WORKTREE_ROOT/.zed/OUTPUT_PDF) \"zed %f:%l\"",
     "reveal": "never"
   },
   {
